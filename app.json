@@ -1,0 +1,1 @@
+{ "expo": { "name": "MSB Mobile", "slug": "msb-mobile", "version": "1.0.0", "android": { "package": "com.mysecondbrain.app" }, "ios": { "bundleIdentifier": "com.mysecondbrain.app" } } }
