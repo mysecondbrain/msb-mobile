@@ -1,1 +1,1 @@
-{ "expo": { "name": "MSB Mobile", "slug": "msb-mobile", "version": "1.0.0", "android": { "package": "com.mysecondbrain.app" }, "ios": { "bundleIdentifier": "com.mysecondbrain.app" } } }
+{ "expo": { "name": "MSB Mobile", "slug": "msb-mobile", "version": "1.0.0", "android": { "package": "com.mysecondbrain.app" }, "ios": { "bundleIdentifier": "com.mysecondbrain.app" }, "extra": { "eas": { "projectId": "0287b6a0-c705-4479-8052-14e1d0c1f5d1" } } } }
