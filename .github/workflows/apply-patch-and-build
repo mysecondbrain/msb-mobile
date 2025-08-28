@@ -1,6 +1,0 @@
-[
-  { "path":"package.json", "content":"{\n  \"name\": \"mybrainsafe\",\n  \"version\": \"1.0.0\",\n  \"private\": true,\n  \"main\": \"expo-router/entry\",\n  \"scripts\": { \"start\": \"expo start\" },\n  \"dependencies\": {\n    \"expo\": \"~53.0.20\",\n    \"react\": \"19.0.0\",\n    \"react-native\": \"0.79.5\",\n    \"expo-router\": \"~5.1.4\"\n  }\n}\n" },
-  { "path":"babel.config.js", "content":"module.exports = function (api) { api.cache(true); return { presets: [\"babel-preset-expo\"] }; };\n" },
-  { "path":"app/_layout.tsx", "content":"import React from \"react\";\nimport { Stack } from \"expo-router\";\nexport default function Layout(){\n  return (\n    <Stack screenOptions={{ headerShown: true }}>\n      <Stack.Screen name=\"index\" options={{ title: \"mybrainsafe\" }} />\n    </Stack>\n  );\n}\n" },
-  { "path":"app/index.tsx", "content":"import React from \"react\";\nimport { SafeAreaView, View, Text, StyleSheet } from \"react-native\";\nexport default function Home(){\n  return (\n    <SafeAreaView style={{ flex:1 }}>\n      <View style={s.c}><Text style={s.t}>mybrainsafe läuft 🚀</Text></View>\n    </SafeAreaView>\n  );\n}\nconst s = StyleSheet.create({ c:{flex:1,alignItems:\"center\",justifyContent:\"center\"}, t:{fontSize:18,fontWeight:\"600\"} });\n" }
-]
