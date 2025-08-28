@@ -1,0 +1,32 @@
+name: Apply Simple Patch
+
+on:
+  workflow_dispatch:
+    inputs:
+      FILES_JSON:
+        description: 'JSON array: [{"path":"file","content":"...","encoding":"plain|base64"}]'
+        required: true
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Wir übergeben die Eingabe erst in eine ENV-Variable (kein Here-Doc),
+      # schreiben sie dann als Datei und verarbeiten sie mit Node (einzeilig).
+      - name: Write files
+        env:
+          FILES_JSON: ${{ inputs.FILES_JSON }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$FILES_JSON" > files.json
+          node -e "const fs=require('fs'),p=require('path');const a=JSON.parse(fs.readFileSync('files.json','utf8'));a.forEach(f=>{const d=p.dirname(f.path);if(d && !fs.existsSync(d)) fs.mkdirSync(d,{recursive:true});if(f.encoding==='base64'){fs.writeFileSync(f.path,Buffer.from(f.content,'base64'));}else{fs.writeFileSync(f.path,f.content);}});console.log('Wrote',a.length,'files');"
+
+      - name: Commit
+        run: |
+          git config user.name  "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add -A
+          git commit -m "patch" || echo "no changes"
+          git push || true
