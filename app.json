@@ -2,14 +2,11 @@
   "expo": {
     "name": "safemybrain",
     "slug": "safemybrain",
-    "android": {
-      "package": "com.safemybrain.app",
-      "versionCode": 1
-    },
+    "android": { "package": "com.safemybrain.app", "versionCode": 1 },
     "version": "1.0.0",
     "extra": {
       "eas": {
-        "projectId": "0287b6a0-c705-4479-8052-14e1d0c1f5d1"
+        "projectId": "53fb69a4-d378-48be-b8f4-619e15f9ea53"
       }
     }
   }
