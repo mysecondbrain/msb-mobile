@@ -1,11 +1,16 @@
 {
   "expo": {
+    "name": "safemybrain",
+    "slug": "safemybrain",
     "android": {
       "package": "com.safemybrain.app",
       "versionCode": 1
     },
     "version": "1.0.0",
-    "main": "expo-router/entry",
-    "entryPoint": "expo-router/entry"
+    "extra": {
+      "eas": {
+        "projectId": "0287b6a0-c705-4479-8052-14e1d0c1f5d1"
+      }
+    }
   }
 }
